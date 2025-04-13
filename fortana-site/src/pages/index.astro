@@ -19,16 +19,22 @@ const tree = buildTree(documents);
 // Log all document IDs to debug
 console.log("Available documents:", documents.map(d => d.id));
 
-// Find the Home document - try multiple possible IDs
-let homeDocument = documents.find(doc => doc.id === "Home");
+// Find the Home document - first try exact matches
+let homeDocument = documents.find(doc => doc.id === "home");
+
+// If not found, try slug or other criteria
 if (!homeDocument) {
-  // Try other possible variations of the home file
   homeDocument = documents.find(doc => 
-    doc.id === "home" || 
-    doc.id.toLowerCase() === "home" ||
     doc.slug === "home" ||
-    doc.slug === "Home" ||
-    doc.data.title?.includes("Fortana")
+    doc.data.slug === "home"
+  );
+}
+
+// Last resort - look for a document with a home-like title
+if (!homeDocument) {
+  homeDocument = documents.find(doc => 
+    doc.data.title === "Fortana - Money Planning Without Budgeting" ||
+    doc.data.title?.toLowerCase().includes("welcome to fortana")
   );
 }
 

@@ -32,4 +32,4 @@ Make progress toward your goals without the frustration of traditional budgeting
 
 The Fortana app is coming soon!
 
-[[Home|Return to Home]] 
+[[home|Return to Home]]
