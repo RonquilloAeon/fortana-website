@@ -2,6 +2,7 @@
 title: Fortana - Money Planning Without Budgeting
 description: A simple money planning app for people who don't like to budget
 published: true
+slug: home
 ---
 
 # Welcome to Fortana
